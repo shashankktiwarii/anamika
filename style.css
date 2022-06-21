@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body{
+    background: #000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.container{
+    text-align:center;
+    align-items: center;
+}
+
+#moon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 290px;
+    margin-bottom: 10px;
+}
+#moon2{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 290px;
+    margin-bottom: 10px;
+}
+.fglow{
+    color: #fff;
+    font-size: 12px;
+}
+
+@keyframes flash {
+
+    from {
+      text-shadow:
+      0 0 5px #fc0303, 0 0 10px #fc0303,
+      0 0 20px #fc0303, 0 0 40px #fc0303;
+    }
+
+    to {
+      text-shadow:
+      0 0 5px #03cafc, 0 0 7px #03cafc,
+      0 0 13px #03cafc, 0 0 30px #00ccffb7;
+    }
+  }
+  .fglow { animation: flash 14s ease infinite alternate; }

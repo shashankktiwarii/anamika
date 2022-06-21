@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <img id="moon" src="phase-18.png" alt="Anamika">
+        <img id="moon2" src="phase-4.png" alt="Shashank">
+        <div class="fglow"id="time-elapsed"></div>
+    </div>
+    <script>
+        let moon = document.getElementById(`moon`)
+        moon.addEventListener('click', function(){
+            alert('I want to say I love you in a thoroughly non-corny way, but nothing comes to mind, so let me just say this: I love you.')
+        })
+        console.log(moon)
+
+        let moon2 = document.getElementById('moon2')
+        moon2.addEventListener('click', function(){
+            alert('Me + You = A forever kind of love ❤️ />')
+        })
+        console.log(moon2)
+
+        var startDateTime = new Date(2022,4,17,23,59,59,0); // YYYY (M-1) D H m s ms (start time and date from DB)
+var startStamp = startDateTime.getTime();
+
+var newDate = new Date();
+var newStamp = newDate.getTime();
+
+var timer; // for storing the interval (to stop or pause later if needed)
+
+function updateClock() {
+    newDate = new Date();
+    newStamp = newDate.getTime();
+    var diff = Math.round((newStamp-startStamp)/1000);
+    
+    var d = Math.floor(diff/(24*60*60)); /* though I hope she won't be working for consecutive days :) */
+    diff = diff-(d*24*60*60);
+    var h = Math.floor(diff/(60*60));
+    diff = diff-(h*60*60);
+    var m = Math.floor(diff/(60));
+    diff = diff-(m*60);
+    var s = diff;
+    
+    document.getElementById("time-elapsed").innerHTML = d+" days, "+h+" hours, "+m+" minutes, "+s+" seconds and counting";
+}
+
+timer = setInterval(updateClock, 1000);
+    </script>
+
+</body>
+</html>
